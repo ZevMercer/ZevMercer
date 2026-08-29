@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400" font-family="'Segoe UI',Arial,sans-serif" role="img" aria-label="Zev Mercer neon banner">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eef2ff"/>
+      <stop offset="1" stop-color="#dbe4ff"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="0.5" cy="1" r="0.95">
+      <stop offset="0" stop-color="#c026d3"/>
+      <stop offset="0.45" stop-color="#7c3aed"/>
+      <stop offset="1" stop-color="#6366f1" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="title" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0891b2"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="floor"><rect x="0" y="250" width="1200" height="150"/></clipPath>
+  </defs>
+
+  <rect width="1200" height="400" fill="url(#bg)"/>
+  <ellipse cx="600" cy="300" rx="430" ry="270" fill="url(#sun)" opacity="0.4"/>
+  <rect x="0" y="247" width="1200" height="3" fill="#0891b2" opacity="0.7"/>
+
+  <!-- perspective floor -->
+  <g clip-path="url(#floor)">
+    <g stroke="#7c3aed" stroke-width="1.4" opacity="0.4">
+      <line x1="600" y1="250" x2="-150" y2="400"/>
+      <line x1="600" y1="250" x2="0" y2="400"/>
+      <line x1="600" y1="250" x2="150" y2="400"/>
+      <line x1="600" y1="250" x2="300" y2="400"/>
+      <line x1="600" y1="250" x2="450" y2="400"/>
+      <line x1="600" y1="250" x2="600" y2="400"/>
+      <line x1="600" y1="250" x2="750" y2="400"/>
+      <line x1="600" y1="250" x2="900" y2="400"/>
+      <line x1="600" y1="250" x2="1050" y2="400"/>
+      <line x1="600" y1="250" x2="1200" y2="400"/>
+      <line x1="600" y1="250" x2="1350" y2="400"/>
+    </g>
+    <g stroke="#0ea5e9" stroke-width="1.6" opacity="0.4">
+      <line x1="0" y1="220" x2="1200" y2="220"/>
+      <line x1="0" y1="250" x2="1200" y2="250"/>
+      <line x1="0" y1="280" x2="1200" y2="280"/>
+      <line x1="0" y1="310" x2="1200" y2="310"/>
+      <line x1="0" y1="340" x2="1200" y2="340"/>
+      <line x1="0" y1="370" x2="1200" y2="370"/>
+      <line x1="0" y1="400" x2="1200" y2="400"/>
+      <line x1="0" y1="430" x2="1200" y2="430"/>
+      <animateTransform attributeName="transform" type="translate" from="0 0" to="0 30" dur="1.4s" repeatCount="indefinite"/>
+    </g>
+  </g>
+
+  <text x="600" y="178" text-anchor="middle" font-size="90" font-weight="800" fill="url(#title)" filter="url(#glow)" letter-spacing="10">ZEV MERCER</text>
+  <text x="600" y="222" text-anchor="middle" font-size="21" font-weight="600" fill="#1e293b" letter-spacing="7" opacity="0.85">GAME DEVELOPER &#183; INDIE STUDIO &#183; Lua / L&#214;VE 2D</text>
+
+  <!-- subtle scanlines -->
+  <g fill="#000000" opacity="0.03">
+    <rect x="0" y="0" width="1200" height="2"/>
+    <rect x="0" y="6" width="1200" height="2"/>
+    <rect x="0" y="12" width="1200" height="2"/>
+  </g>
+</svg>
