@@ -2,8 +2,14 @@ name: Generate Snake Animation
 
 on:
   schedule:
-    - cron: "0 0 * * *"  # Runs every day at midnight
+    - cron: "0 0 * * *"        # daily at midnight UTC
   workflow_dispatch:
+  push:
+    branches: [ main ]          # regenerate when the profile README updates
+
+# Allow the workflow's GITHUB_TOKEN to push the generated snake to `output`
+permissions:
+  contents: write
 
 jobs:
   generate:
@@ -12,7 +18,7 @@ jobs:
 
     steps:
       - name: Generate GitHub Contributions Snake
-        uses: Platane/snk/svg-only@v3
+        uses: Platane/snk@v3
         with:
           github_user_name: ZevMercer
           outputs: |
@@ -21,10 +27,8 @@ jobs:
             dist/github-contribution-grid-snake-light.svg?palette=github-light
 
       - name: Push to Output Branch
-        uses: crazy-max/ghaction-github-pages@v3.1.0
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          target_branch: output
-          build_dir: dist
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: output
